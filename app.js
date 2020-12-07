@@ -31,7 +31,7 @@ mongoose.connect(mongo_path || "mongodb+srv://tqdat99:datdarkus1305@tqdat99.imle
   });
 
 // set up port
-const port = process.env.PORT;
+const port = process.env.PORT || 5035;
 // set up route
 app.get('/', (req, res) => {
   res.status(200).json({
