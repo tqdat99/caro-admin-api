@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const userRoutes = require('./server/routes/user');
+const adminRoutes = require('./server/routes/admin');
 
 // set up dependencies
 const app = express();
@@ -18,6 +19,7 @@ app.use(logger('dev'));
 
 // set up routes
 app.use('/users/', userRoutes);
+app.use('/admins/', adminRoutes);
 
 
 // set up mongoose
