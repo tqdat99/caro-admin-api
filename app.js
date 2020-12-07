@@ -21,7 +21,8 @@ app.use('/users/', userRoutes);
 
 
 // set up mongoose
-mongoose.connect("mongodb+srv://tqdat99:datdarkus1305@tqdat99.imlem.mongodb.net/caro?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+const mongo_path = process.env.MONGO_PATH;
+mongoose.connect(mongo_path || "mongodb+srv://tqdat99:datdarkus1305@tqdat99.imlem.mongodb.net/caro?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Database connected');
   })
@@ -30,7 +31,7 @@ mongoose.connect("mongodb+srv://tqdat99:datdarkus1305@tqdat99.imlem.mongodb.net/
   });
 
 // set up port
-const port = 5035;
+const port = process.env.PORT;
 // set up route
 app.get('/', (req, res) => {
   res.status(200).json({
