@@ -6,11 +6,10 @@
 // import userRoutes from './server/routes/user.js';
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const logger = require('morgan');
 const userRoutes = require('./server/routes/user');
 const adminRoutes = require('./server/routes/admin');
-
+require('./server/db/db');
 
 // set up dependencies
 const app = express();
@@ -22,17 +21,6 @@ app.use(logger('dev'));
 app.use('/users/', userRoutes);
 app.use('/admins/', adminRoutes);
 
-
-// set up mongoose
-const mongo_path = process.env.MONGO_PATH;
-mongoose.connect(mongo_path || "mongodb+srv://tqdat99:datdarkus1305@tqdat99.imlem.mongodb.net/caro?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Database connected');
-  })
-  .catch((error) => {
-    console.log('Error connecting to database');
-  });
-
 // set up port
 const port = process.env.PORT || 5035;
 // set up route
@@ -41,10 +29,42 @@ app.get('/', (req, res) => {
     message: 'Welcome to Project with Nodejs Express and MongoDB',
   });
 });
-app.listen(port, () => {
-  console.log(`Our server is running on port ${port}`);
+
+
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+const userSocketIdMap = new Map();
+
+io.on('connection', function (socket) {
+  console.log("socket.id:", socket.id);
+  let userName = socket.handshake.query.userName;
+  if (!userSocketIdMap.has(userName)) {
+    userSocketIdMap.set(userName, new Set([socket.id]));
+  } else {
+    userSocketIdMap.get(userName).add(socket.id);
+  }
+  let onlineUsers = Array.from(userSocketIdMap.keys());
+  console.log(onlineUsers);
+  socket.broadcast.emit('Online-users', { Online: onlineUsers });
+  /* Disconnect socket */
+  socket.on('disconnect', function () {
+    if (userSocketIdMap.has(userName)) {
+      let userSocketIdSet = userSocketIdMap.get(userName);
+      userSocketIdSet.delete(socket.id);
+      if (userSocketIdSet.size == 0) {
+        userSocketIdMap.delete(userName);
+      }
+      let onlineUsers = Array.from(userSocketIdMap.keys());
+      console.log(onlineUsers);
+      socket.broadcast.emit('Online-users', { Online: onlineUsers });
+    }
+  });
 });
 
+
+server.listen(port, () => {
+  console.log(`Our server is running on port ${port}`);
+});
 
 
 module.exports.app = app;
