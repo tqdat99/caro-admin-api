@@ -11,6 +11,7 @@ const logger = require('morgan');
 const userRoutes = require('./server/routes/user');
 const adminRoutes = require('./server/routes/admin');
 
+
 // set up dependencies
 const app = express();
 app.use(bodyParser.json());
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Our server is running on port ${port}`);
 });
+
 
 
 module.exports.app = app;

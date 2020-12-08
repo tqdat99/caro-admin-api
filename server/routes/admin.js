@@ -1,11 +1,12 @@
 const express = require('express');
-const { createAdmin, getAdmins, getAdminByAdminId, getPasswordByAdminId, checkAdminByAdminId } = require('../controllers/admin');
+var passport = require('passport');
+require('../passport/passport')(passport);
+const { getAdmins, getAdminByAdminId, signUp, signIn } = require('../controllers/admin');
 const adminRoutes = express.Router();
 
-adminRoutes.post('/create', createAdmin);
-adminRoutes.get('/', getAdmins);
-adminRoutes.get('/admin', getAdminByAdminId);
-adminRoutes.get('/password', getPasswordByAdminId);
-adminRoutes.get('/check', checkAdminByAdminId);
+adminRoutes.get('/', passport.authenticate('jwt', { session: false }), getAdmins);
+adminRoutes.post('/signup', passport.authenticate('jwt', { session: false }), signUp);
+adminRoutes.post('/signin', signIn);
+adminRoutes.get('/admin', passport.authenticate('jwt', { session: false }), getAdminByAdminId);
 
 module.exports = adminRoutes;
