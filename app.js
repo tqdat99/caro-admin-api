@@ -16,6 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
+app.use(passport.initialize());
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
