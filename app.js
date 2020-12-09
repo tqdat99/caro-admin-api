@@ -19,10 +19,10 @@ app.use(logger('dev'));
 app.use(passport.initialize());
 
 app.use((req, res, next) => {
-  res.append('Access-Control-Allow-Origin', ['*']);
-  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.append('Access-Control-Allow-Headers', 'Content-Type');
-  next();
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', '*');
+    next();
 });
 
 // set up routes
@@ -53,7 +53,7 @@ io.on('connection', function (socket) {
   }
   let onlineUsers = Array.from(userSocketIdMap.keys());
   console.log(onlineUsers);
-  io.emit('Online-users', { Online: onlineUsers });
+  socket.broadcast.emit('Online-users', { Online: onlineUsers });
   /* Disconnect socket */
   socket.on('disconnect', function () {
     if (userSocketIdMap.has(userName)) {
@@ -64,7 +64,7 @@ io.on('connection', function (socket) {
       }
       let onlineUsers = Array.from(userSocketIdMap.keys());
       console.log(onlineUsers);
-      io.emit('Online-users', { Online: onlineUsers });
+      socket.broadcast.emit('Online-users', { Online: onlineUsers });
     }
   });
 });
