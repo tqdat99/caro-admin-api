@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const userRoutes = require('./server/routes/user');
 const adminRoutes = require('./server/routes/admin');
+const passport = require('passport');
+
 require('./server/db/db');
 
 // set up dependencies
@@ -19,10 +21,10 @@ app.use(logger('dev'));
 app.use(passport.initialize());
 
 app.use((req, res, next) => {
-    res.append('Access-Control-Allow-Origin', ['*']);
-    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.append('Access-Control-Allow-Headers', '*');
-    next();
+  res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', '*');
+  next();
 });
 
 // set up routes
