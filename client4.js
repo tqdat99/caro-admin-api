@@ -1,6 +1,6 @@
 const io = require('socket.io-client');
 
-const socket = io('http://localhost:5035?userName=tom4');
+const socket = io('https://caro-user-api.herokuapp.com?userName=tom4');
 
 socket.on('connect', () => {
     console.log(socket.id);
