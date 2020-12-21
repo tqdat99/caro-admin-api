@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e11426d1-74f4-4110-a09c-646688b48081" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +49,24 @@
       <option name="presentableId" value="Default" />
       <updated>1607506819019</updated>
       <workItem from="1607506820170" duration="148000" />
-      <workItem from="1608542677928" duration="5822000" />
+      <workItem from="1608542677928" duration="6934000" />
     </task>
+    <task id="LOCAL-00001" summary="search users by username or email api">
+      <created>1608563042600</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608563042600</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="search users by username or email api" />
+    <option name="LAST_COMMIT_MESSAGE" value="search users by username or email api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="337" y="18" width="1236" height="1009" key="#Servers" timestamp="1608546291723">
@@ -69,6 +77,10 @@
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
     <state x="410" y="128" width="1099" height="809" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1030@0.0.1920.1030" timestamp="1608546296866" />
+    <state x="344" y="0" width="1222" height="1027" key="CommitChangelistDialog2" timestamp="1608563042409">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state x="344" y="0" width="1222" height="1027" key="CommitChangelistDialog2/0.0.1920.1030@0.0.1920.1030" timestamp="1608563042409" />
     <state width="1858" height="208" key="GridCell.Tab.0.bottom" timestamp="1608556199850">
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
@@ -117,6 +129,10 @@
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
     <state width="1858" height="208" key="GridCell.Tab.2.right/0.0.1920.1030@0.0.1920.1030" timestamp="1608556199852" />
+    <state x="355" y="125" width="1200" height="775" key="Vcs.Push.Dialog.v2" timestamp="1608563867509">
+      <screen x="0" y="0" width="1920" height="1030" />
+    </state>
+    <state x="355" y="125" width="1200" height="775" key="Vcs.Push.Dialog.v2/0.0.1920.1030@0.0.1920.1030" timestamp="1608563867509" />
     <state x="527" y="133" width="865" height="762" key="find.popup" timestamp="1608556097211">
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
