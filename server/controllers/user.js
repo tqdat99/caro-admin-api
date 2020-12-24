@@ -96,50 +96,48 @@ module.exports.getUserByUserID = function (req, res) {
  * khanhhongtranle
  */
 //Update active status
-module.exports.postUpdateActiveStatus = function (req, res) {
+module.exports.postUpdateActiveStatus = async function (req, res) {
     const data = req.body;
+    console.log(data);
     let activeStatus;
     if (data.block) {
         activeStatus = "0";
     } else {
         activeStatus = "1";
     }
-    const objectId = mongoose.Types.ObjectId(data.id);
-    const ke =  User.updateOne(
-        {_id: objectId},
-        {
-            $set: {
-                active: activeStatus
-            }
-        },
-        {multi: true}).exec()
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err =>{
-            console.log(err);
-        });
-    console.log(ke);
-        // .select('username email active')
-        // .then((User) => {
-        //     console.log(User);
-        //     return res.status(200).json({
-        //         success: true,
-        //         message: 'User',
-        //         User: User,
-        //     });
-        // })
-        // .catch((err) => {
-        //     res.status(500).json({
-        //         success: false,
-        //         message: 'Server error. Please try again.',
-        //         error: err.message,
-        //     });
-        // });
 
-    return res.status(200).json({
-                success: true,
-                message: 'User',
-                User: User,
+    return User.updateOne(
+        { "_id": data.id },
+        {
+            $set:
+                {
+                    active: activeStatus
+                }
+
+        }
+    ).exec()
+        .then(User.find().select('')
+            .then((User) => {
+                return res.status(200).json({
+                    success: true,
+                    message: 'User',
+                    User: User,
+                });
+            })
+            .catch((err) => {
+                return res.status(500).json({
+                    success: false,
+                    message: 'Server error. Please try again.',
+                    error: err.message,
+                });
+            }))
+        .catch((err)=>{
+            return res.status(500).json({
+                success: false,
+                message: 'Server error. Please try again.',
+                error: err.message,
             });
+            }
+        );
+
 }
