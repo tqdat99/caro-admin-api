@@ -45,3 +45,25 @@ module.exports.getGameByID = async function (req, res) {
             });
         });
 }
+
+
+module.exports.getGameByUsername = async function (req, res) {
+    const username = req.query.username;
+    console.log(username);
+    return Game.find({$or: [{'turn.move_x': username}, {'turn.move_o': username}]})
+        .select(' ')
+        .then((Game) => {
+            return res.status(200).json({
+                success: true,
+                message: 'Game',
+                Game: Game,
+            });
+        })
+        .catch((err) => {
+            res.status(500).json({
+                success: false,
+                message: 'Server error. Please try again.',
+                error: err.message,
+            });
+        });
+}
