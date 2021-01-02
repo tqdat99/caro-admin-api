@@ -5,9 +5,9 @@
 const express = require('express');
 var passport = require('passport');
 require('../passport/passport')(passport);
-const { } = require('../controllers/game');
+const { getAllOfGames } = require('../controllers/game');
 const gameRoutes = express.Router();
 
-//gameRoutes.get('/', passport.authenticate('jwt', { session: false }));
+gameRoutes.get('/all', passport.authenticate('jwt', { session: false }), getAllOfGames);
 
 module.exports = gameRoutes;

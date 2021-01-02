@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 // set up routes
 app.use('/users/', userRoutes);
 app.use('/admins/', adminRoutes);
-app.use('/game/', gameRoutes);
+app.use('/games/', gameRoutes);
 
 // set up port
 const port = process.env.PORT || 5035;
