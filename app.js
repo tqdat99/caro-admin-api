@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const userRoutes = require('./server/routes/user');
 const adminRoutes = require('./server/routes/admin');
+const gameRoutes = require('./server/routes/game');
 const passport = require('passport');
 
 require('./server/db/db');
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 // set up routes
 app.use('/users/', userRoutes);
 app.use('/admins/', adminRoutes);
+app.use('/game/', gameRoutes);
 
 // set up port
 const port = process.env.PORT || 5035;
