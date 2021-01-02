@@ -98,7 +98,6 @@ module.exports.getUserByUserID = function (req, res) {
 //Update active status
 module.exports.postUpdateActiveStatus = async function (req, res) {
     const data = req.body;
-    console.log(data);
     let activeStatus;
     if (data.block) {
         activeStatus = "0";
@@ -139,5 +138,39 @@ module.exports.postUpdateActiveStatus = async function (req, res) {
             });
             }
         );
+
+}
+
+/**
+ * by khanhhongtranle
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+module.exports.postSaveUser = async function (req, res) {
+    const data = req.body;
+    return User.updateOne(
+        { "_id": data.id },
+        {
+            $set:
+                {
+                    email: data.email
+                }
+
+        }
+    ).exec()
+        .then(result => {
+            return res.status(200).json({
+                success: true,
+                message: 'User',
+            });
+        })
+        .catch(err => {
+            return res.status(500).json({
+                success: false,
+                message: 'Server error. Please try again.',
+                error: err.message,
+            });
+        })
 
 }
