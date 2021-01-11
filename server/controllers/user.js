@@ -50,8 +50,8 @@ module.exports.getUserByUsername = function (req, res) {
 // Search user(s) by username or email address
 module.exports.searchUsers = function (req, res) {
     let keyword = req.query.kw;
-    return User.find({$or: [{username: {$regex: keyword}}, {email: {$regex: keyword}}]})
-        .select('username email active')
+    return User.find({$or: [{username: {$regex: keyword}}, {email: {$regex: keyword}}, {displayName: {$regex: keyword}}]})
+        .select(' ')
         .then((User) => {
             return res.status(200).json({
                 success: true,

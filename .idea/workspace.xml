@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e11426d1-74f4-4110-a09c-646688b48081" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e11426d1-74f4-4110-a09c-646688b48081" name="Default Changelist" comment="edit user's email api">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +12,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,14 +30,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/controllers" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/controllers" />
+      <recent name="$PROJECT_DIR$/server/routes" />
+      <recent name="$PROJECT_DIR$/server/models" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" nameIsGenerated="true" filter_connections="FILTER" server_name="Unnamed" session_id="PHPSTORM">
@@ -50,6 +62,11 @@
       <updated>1607506819019</updated>
       <workItem from="1607506820170" duration="148000" />
       <workItem from="1608542677928" duration="6934000" />
+      <workItem from="1608739689313" duration="5049000" />
+      <workItem from="1608795959135" duration="4091000" />
+      <workItem from="1609522907358" duration="1082000" />
+      <workItem from="1609558781408" duration="12017000" />
+      <workItem from="1610354087758" duration="2822000" />
     </task>
     <task id="LOCAL-00001" summary="search users by username or email api">
       <created>1608563042600</created>
@@ -58,7 +75,63 @@
       <option name="project" value="LOCAL" />
       <updated>1608563042600</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="get user's infomation api">
+      <created>1608745003479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608745003479</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update user's active status api">
+      <created>1608800187530</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608800187530</updated>
+    </task>
+    <task id="LOCAL-00004" summary="edit user's email api">
+      <created>1609566499522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609566499522</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add game model, game route, game controller">
+      <created>1609569339090</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609569339090</updated>
+    </task>
+    <task id="LOCAL-00006" summary="get all games api">
+      <created>1609570139452</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609570139452</updated>
+    </task>
+    <task id="LOCAL-00007" summary="game history api">
+      <created>1609583593351</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1609583593351</updated>
+    </task>
+    <task id="LOCAL-00008" summary="get games by username api">
+      <created>1609590854902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609590854902</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update user's model">
+      <created>1610358183332</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610358183332</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,37 +139,51 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="search users by username or email api" />
-    <option name="LAST_COMMIT_MESSAGE" value="search users by username or email api" />
+    <MESSAGE value="get user's infomation api" />
+    <MESSAGE value="update user's active status api" />
+    <MESSAGE value="edit user's email api" />
+    <MESSAGE value="add game model, game route, game controller" />
+    <MESSAGE value="get all games api" />
+    <MESSAGE value="game history api" />
+    <MESSAGE value="get games by username api" />
+    <MESSAGE value="update user's model" />
+    <option name="LAST_COMMIT_MESSAGE" value="update user's model" />
   </component>
   <component name="WindowStateProjectService">
     <state x="337" y="18" width="1236" height="1009" key="#Servers" timestamp="1608546291723">
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
     <state x="337" y="18" width="1236" height="1009" key="#Servers/0.0.1920.1030@0.0.1920.1030" timestamp="1608546291723" />
-    <state x="410" y="128" width="1099" height="809" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608546296866">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state x="256" y="41" width="1099" height="809" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608740204164">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="410" y="128" width="1099" height="809" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1030@0.0.1920.1030" timestamp="1608546296866" />
-    <state x="344" y="0" width="1222" height="1027" key="CommitChangelistDialog2" timestamp="1608563042409">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state x="256" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.732@0.23.1280.732" timestamp="1608740204164" />
+    <state x="229" y="23" width="853" height="730" key="CommitChangelistDialog2" timestamp="1610358183112">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="344" y="0" width="1222" height="1027" key="CommitChangelistDialog2/0.0.1920.1030@0.0.1920.1030" timestamp="1608563042409" />
-    <state width="1858" height="208" key="GridCell.Tab.0.bottom" timestamp="1608556199850">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state x="229" y="23" width="853" height="730" key="CommitChangelistDialog2/0.23.1280.732@0.23.1280.732" timestamp="1610358183112" />
+    <state width="875" height="190" key="GridCell.Tab.0.bottom" timestamp="1609589177903">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state width="1858" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1030@0.0.1920.1030" timestamp="1608556199850" />
-    <state width="1858" height="208" key="GridCell.Tab.0.center" timestamp="1608556199850">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state width="875" height="190" key="GridCell.Tab.0.bottom/0.23.1280.732@0.23.1280.732" timestamp="1609589177903" />
+    <state width="875" height="190" key="GridCell.Tab.0.center" timestamp="1609589177902">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state width="1858" height="208" key="GridCell.Tab.0.center/0.0.1920.1030@0.0.1920.1030" timestamp="1608556199850" />
-    <state width="1858" height="208" key="GridCell.Tab.0.left" timestamp="1608556199849">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state width="875" height="190" key="GridCell.Tab.0.center/0.23.1280.732@0.23.1280.732" timestamp="1609589177902" />
+    <state width="875" height="190" key="GridCell.Tab.0.left" timestamp="1609589177902">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state width="1858" height="208" key="GridCell.Tab.0.left/0.0.1920.1030@0.0.1920.1030" timestamp="1608556199849" />
-    <state width="1858" height="208" key="GridCell.Tab.0.right" timestamp="1608556199850">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state width="875" height="190" key="GridCell.Tab.0.left/0.23.1280.732@0.23.1280.732" timestamp="1609589177902" />
+    <state width="875" height="190" key="GridCell.Tab.0.right" timestamp="1609589177903">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state width="1858" height="208" key="GridCell.Tab.0.right/0.0.1920.1030@0.0.1920.1030" timestamp="1608556199850" />
+    <state width="875" height="190" key="GridCell.Tab.0.right/0.23.1280.732@0.23.1280.732" timestamp="1609589177903" />
     <state width="1858" height="208" key="GridCell.Tab.1.bottom" timestamp="1608556199851">
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
@@ -129,13 +216,43 @@
       <screen x="0" y="0" width="1920" height="1030" />
     </state>
     <state width="1858" height="208" key="GridCell.Tab.2.right/0.0.1920.1030@0.0.1920.1030" timestamp="1608556199852" />
-    <state x="355" y="125" width="1200" height="775" key="Vcs.Push.Dialog.v2" timestamp="1608563867509">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state width="241" height="457" key="HiddenNamespacesPopup" timestamp="1608739894486">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="241" height="457" key="HiddenNamespacesPopup/0.23.1280.732@0.23.1280.732" timestamp="1608739894486" />
+    <state x="321" y="98" key="RollbackChangesDialog" timestamp="1609522917273">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="321" y="98" key="RollbackChangesDialog/0.23.1280.732@0.23.1280.732" timestamp="1609522917273" />
+    <state x="141" y="28" key="SettingsEditor" timestamp="1608741457124">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="141" y="28" key="SettingsEditor/0.23.1280.732@0.23.1280.732" timestamp="1608741457124" />
+    <state x="237" y="112" width="1200" height="775" key="Vcs.Push.Dialog.v2" timestamp="1610358184676">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="355" y="125" width="1200" height="775" key="Vcs.Push.Dialog.v2/0.0.1920.1030@0.0.1920.1030" timestamp="1608563867509" />
-    <state x="527" y="133" width="865" height="762" key="find.popup" timestamp="1608556097211">
-      <screen x="0" y="0" width="1920" height="1030" />
+    <state x="237" y="112" key="Vcs.Push.Dialog.v2/0.23.1280.732@0.23.1280.732" timestamp="1610358184676" />
+    <state x="228" y="51" key="com.intellij.database.dbimport.ImportDialog" timestamp="1608741439085">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="228" y="51" key="com.intellij.database.dbimport.ImportDialog/0.23.1280.732@0.23.1280.732" timestamp="1608741439085" />
+    <state x="378" y="201" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1608741435111">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="378" y="201" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.23.1280.732@0.23.1280.732" timestamp="1608741435111" />
+    <state x="419" y="103" width="374" height="489" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608740365576">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="419" y="103" width="374" height="489" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1280.732@0.23.1280.732" timestamp="1608740365576" />
+    <state x="100" y="123" width="1080" height="532" key="dock-window-1" timestamp="1608739575429">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="100" y="123" width="1080" height="532" key="dock-window-1/0.23.1280.732@0.23.1280.732" timestamp="1608739575429" />
+    <state x="351" y="118" width="577" height="542" key="find.popup" timestamp="1608797460395">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="527" y="133" width="865" height="762" key="find.popup/0.0.1920.1030@0.0.1920.1030" timestamp="1608556097211" />
+    <state x="351" y="118" width="577" height="542" key="find.popup/0.23.1280.732@0.23.1280.732" timestamp="1608797460395" />
   </component>
 </project>
