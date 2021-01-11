@@ -44,35 +44,6 @@ app.get('/', (req, res) => {
 
 
 const server = require('http').createServer(app);
-// const io = require('socket.io')(server);
-// const userSocketIdMap = new Map();
-
-// io.on('connection', function (socket) {
-//   console.log("socket.id:", socket.id);
-//   let userName = socket.handshake.query.userName;
-//   if (!userSocketIdMap.has(userName)) {
-//     userSocketIdMap.set(userName, new Set([socket.id]));
-//   } else {
-//     userSocketIdMap.get(userName).add(socket.id);
-//   }
-//   let onlineUsers = Array.from(userSocketIdMap.keys());
-//   console.log(onlineUsers);
-//   socket.broadcast.emit('Online-users', { Online: onlineUsers });
-//   /* Disconnect socket */
-//   socket.on('disconnect', function () {
-//     if (userSocketIdMap.has(userName)) {
-//       let userSocketIdSet = userSocketIdMap.get(userName);
-//       userSocketIdSet.delete(socket.id);
-//       if (userSocketIdSet.size == 0) {
-//         userSocketIdMap.delete(userName);
-//       }
-//       let onlineUsers = Array.from(userSocketIdMap.keys());
-//       console.log(onlineUsers);
-//       socket.broadcast.emit('Online-users', { Online: onlineUsers });
-//     }
-//   });
-// });
-
 
 server.listen(port, () => {
   console.log(`Our server is running on port ${port}`);

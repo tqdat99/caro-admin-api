@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 // Get users
 module.exports.getUsers = function (req, res) {
     return User.find()
-        .select('username email active')
+        .select(' ')
         .then((Users) => {
             return res.status(200).json({
                 success: true,
@@ -51,7 +51,7 @@ module.exports.getUserByUsername = function (req, res) {
 module.exports.searchUsers = function (req, res) {
     let keyword = req.query.kw;
     return User.find({$or: [{username: {$regex: keyword}}, {email: {$regex: keyword}}]})
-        .select('username email')
+        .select('username email active')
         .then((User) => {
             return res.status(200).json({
                 success: true,
@@ -75,7 +75,7 @@ module.exports.searchUsers = function (req, res) {
 module.exports.getUserByUserID = function (req, res) {
     let id = req.query.id;
     return User.find({_id: id})
-        .select('username email')
+        .select(' ')
         .then((User) => {
             return res.status(200).json({
                 success: true,
